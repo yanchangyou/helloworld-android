@@ -1,7 +1,7 @@
 package com.helloworldhome.android.switchme;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -20,9 +20,11 @@ public class TouchMeView extends View {
 	float x;
 	float y;
 	Paint paint = new Paint();
+	Activity activity;
 
-	public TouchMeView(Context context) {
-		super(context);
+	public TouchMeView(Activity activity) {
+		super(activity);
+		this.activity = activity;
 	}
 
 	@Override
@@ -47,6 +49,7 @@ public class TouchMeView extends View {
 		x = event.getX();
 		y = event.getY();
 		action = event.getAction();
+		activity.setTitle("(" + x + ", " + y + ")");
 		invalidate();
 		return true;
 	}
