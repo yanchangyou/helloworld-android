@@ -8,8 +8,12 @@
     <string name="green">绿</string>
     <string name="blue">蓝</string>
     <string name="go_back">返回</string>
-    
     <string name="next_page">TouchMe</string>
+    <string name="about">关于</string>
+    <string name="about_author">作者：皓月庖丁</string>
+    <string name="about_version">版本：1.1</string>
+    <string name="about_qq">QQ　: 328950700</string>
+    <string name="about_ok">确定</string>
 
     <color name="backgournd">#777</color>
     <color name="font">#FFF</color>

@@ -1,4 +1,6 @@
-package com.helloworldhome.android.swtichme;
+package com.helloworldhome.android.switchme;
+
+import com.helloworldhome.android.swtichme.R;
 
 import android.app.Activity;
 import android.content.Intent;

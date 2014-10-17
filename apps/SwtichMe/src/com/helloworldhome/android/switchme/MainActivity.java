@@ -1,15 +1,20 @@
-package com.helloworldhome.android.swtichme;
+package com.helloworldhome.android.switchme;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.helloworldhome.android.swtichme.R;
 
 /**
  * 主界面
@@ -24,6 +29,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		// 点击按钮，切换颜色
 		final TextView text = (TextView) findViewById(R.id.text);
 
 		((Button) findViewById(R.id.button_red))
@@ -62,6 +68,9 @@ public class MainActivity extends Activity {
 	}
 
 	@Override
+	/**
+	 * ToutchMe界面还回
+	 */
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		final TextView text = (TextView) findViewById(R.id.text);
@@ -80,6 +89,8 @@ public class MainActivity extends Activity {
 		final TextView text = (TextView) findViewById(R.id.text);
 
 		int id = item.getItemId();
+
+		// 颜色切换
 		if (id == R.id.action_red) {
 			text.setBackgroundColor(Color.RED);
 		} else if (id == R.id.action_green) {
@@ -88,10 +99,23 @@ public class MainActivity extends Activity {
 			text.setBackgroundColor(Color.BLUE);
 		}
 
+		// 到下一页
 		if (R.id.action_next_page == id) {
 			Intent intent = new Intent();
 			intent.setClass(MainActivity.this, TouchMeActivity.class);
 			startActivity(intent);
+		}
+
+		// 关于信息
+		if (R.id.action_about == id) {
+			LayoutInflater inflater = getLayoutInflater();
+			View layout = inflater.inflate(R.layout.about,
+					(ViewGroup) findViewById(R.layout.about));
+
+			new AlertDialog.Builder(this).setTitle(R.string.about)
+					.setView(layout).setPositiveButton(R.string.about_ok, null)
+					.show();
+
 		}
 
 		return super.onOptionsItemSelected(item);

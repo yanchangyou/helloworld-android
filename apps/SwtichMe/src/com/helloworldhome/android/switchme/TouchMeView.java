@@ -1,4 +1,4 @@
-package com.helloworldhome.android.swtichme;
+package com.helloworldhome.android.switchme;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
