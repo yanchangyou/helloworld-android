@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">SwitchMe</string>
+    <string name="touch_me">TouchMe</string>
+    <string name="hello_world">hello world!</string>
+    <string name="red">红</string>
+    <string name="green">绿</string>
+    <string name="blue">蓝</string>
+    <string name="go_back">返回</string>
+    
+    <string name="next_page">TouchMe</string>
+
+    <color name="backgournd">#777</color>
+    <color name="font">#FFF</color>
+
+</resources>
