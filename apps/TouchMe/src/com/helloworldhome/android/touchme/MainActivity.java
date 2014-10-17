@@ -1,15 +1,16 @@
 package com.helloworldhome.android.touchme;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
+@SuppressLint("ClickableViewAccessibility")
 public class MainActivity extends Activity {
 
 	@Override
