@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.helloworldhome.android.imageview.MainActivity" >
+    tools:context="com.helloworldhome.android.funnygif.MainActivity" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,10 +31,11 @@
             tools:ignore="ButtonStyle" />
     </LinearLayout>
 
-    <com.helloworldhome.android.imageview.GifView
-        android:id="@+id/imageView1"
+    <com.helloworldhome.android.funnygif.FunnyGifView
+        android:id="@+id/funnyGifView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="50dp"
         android:layout_weight="0.40" />
 
 </LinearLayout>

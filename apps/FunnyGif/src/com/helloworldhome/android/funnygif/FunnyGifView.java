@@ -1,4 +1,4 @@
-package com.helloworldhome.android.imageview;
+package com.helloworldhome.android.funnygif;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,30 +8,30 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * gif view
+ * funny gif view
  * 
  * @author yanchangyou@gmail.com
  *
  */
-public class GifView extends View {
+public class FunnyGifView extends View {
 
-	private int currentIndex = Integer.MAX_VALUE / 2;
-	private int[] PICITURES = new int[] {R.drawable.id2,
-			 R.drawable.id5, R.drawable.id6,
-			R.drawable.id8,R.drawable.id10,
-			R.drawable.id11, R.drawable.id12, R.drawable.id13, R.drawable.id14,
-			R.drawable.id15, R.drawable.id16 };
+	private int[] PICITURES = new int[] { R.drawable.id2, R.drawable.id5,
+			R.drawable.id6, R.drawable.id8, R.drawable.id10, R.drawable.id11,
+			R.drawable.id12, R.drawable.id13, R.drawable.id14, R.drawable.id15,
+			R.drawable.id16 };
 	private long currentTime;
+	private int currentIndex;
 	private Movie movie;
 
-	public GifView(Context context) {
+	public FunnyGifView(Context context) {
 		super(context);
+		currentIndex = Integer.MAX_VALUE / 2;// 初始化为中间数据
 		movie = Movie
 				.decodeStream(getResources().openRawResource(PICITURES[0]));
 		currentTime = SystemClock.uptimeMillis();
 	}
 
-	public GifView(Context context, AttributeSet attrs) {
+	public FunnyGifView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		movie = Movie
 				.decodeStream(getResources().openRawResource(PICITURES[0]));
@@ -39,11 +39,11 @@ public class GifView extends View {
 	}
 
 	public void showPreImage() {
-		showImage(currentIndex--);
+		showImage(--currentIndex);
 	}
 
 	public void showNextImage() {
-		showImage(currentIndex++);
+		showImage(++currentIndex);
 	}
 
 	public void showImage(int index) {
